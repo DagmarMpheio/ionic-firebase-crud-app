@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Contactos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contact of Contacts" lines="full">
+      <ion-label class="animate__animated animate__backInLeft">
+        <strong> {{contact.firstName }} {{ contact.lastName }} </strong>
+        <p>{{ contact.email }}</p>
+        <p>{{ contact.phone }}</p>
+        <p>{{ contact.address }}</p>
+      </ion-label>
+
+      <div item-end class="animate__animated animate__backInLeft">
+        <button [routerLink]="['/update-contact/',contact.id]">
+          <ion-icon name="create" style="zoom:1.5" color="primary"></ion-icon>
+        </button>
+		
+        <button (click)="remove(contact.id)">
+          <ion-icon name="trash" style="zoom:1.5" color="danger"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

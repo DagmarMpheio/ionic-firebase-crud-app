@@ -1,5 +1,7 @@
 {
   "name": "ionic-firebase-crup-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
